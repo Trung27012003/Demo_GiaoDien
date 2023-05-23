@@ -1,0 +1,32 @@
+﻿<a class="list-group-item" href="#" onclick="loadPage('Home', 'MyProfile')"> My Profile </a>
+<a class="list-group-item" href="#" onclick="loadPage('Home', 'MyAddress')"> My Address </a>
+<a class="list-group-item" href="#" onclick="loadPage('Home', 'Content')"> Log Out </a>
+
+
+<script>
+    $(document).ready(function () {
+        // Mặc định load trang con "Item 1" khi trang được tải lần đầu
+        loadPage('Home', 'MyProfile');
+    });
+
+    function loadPage(controller, action) {
+        // Sử dụng Ajax để tải nội dung trang con
+        $.ajax({
+            url: '/' + controller + '/' + action, // Đường dẫn đến controller và action
+            type: 'GET',
+            success: function (result) {
+                // Gán nội dung trang con vào div page-content
+                $('#page-content').html(result);
+            }
+        });
+    }
+
+    // Ngăn chặn redirect khi nhấp vào liên kết trong trang "MyProfile"
+    $(document).on('click', '#page-content a', function (event) {
+        event.preventDefault();
+        // Lấy đường dẫn từ thuộc tính href của liên kết
+        var href = $(this).attr('href');
+        // Xử lý logic tiếp theo nếu cần thiết
+        // ...
+    });
+</script>

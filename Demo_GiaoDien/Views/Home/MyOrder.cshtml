@@ -1,0 +1,58 @@
+﻿<article class="card-group card-stat">
+    <a class="card bg" href="#" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Chờ xác nhận</span>
+        </div>
+    </a>
+    <a class="card bg" href="#" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Chờ lấy hàng</span>
+        </div>
+    </a>
+    <a class="card bg" href="#" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Đang giao</span>
+        </div>
+    </a>
+    <a class="card bg" href="#" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Đã nhận</span>
+        </div>
+    </a>
+    <a class="card bg" href="#" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Đã hủy</span>
+        </div>
+    </a>
+    <a class="card bg" onclick="loadPageWithParams('controller', 'action', 'param1')">
+        <div class="p-2">
+            <h4 class="title">38</h4>
+            <span>Trả hàng</span>
+        </div>
+    </a>
+
+</article>
+<div id="page-content"> @*load data vào đây*@
+
+</div>
+<script>
+    function loadPageWithParams(controller, action, param1) {
+        // Sử dụng Ajax để tải nội dung trang con với tham số truyền vào
+        $.ajax({
+            url: '/' + controller + '/' + action,
+            type: 'GET',
+            data: {
+                param1: param1,
+            },
+            success: function (result) {
+                // Gán nội dung trang con vào div page-content
+                $('#page-content').html(result);
+            }
+        });
+    }
+</script>
