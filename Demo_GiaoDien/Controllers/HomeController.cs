@@ -1,47 +1,9 @@
-﻿using Demo_GiaoDien.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Demo_GiaoDien.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Home()
-        {
-            return View();
-        }
-        public IActionResult MyAccount()
-        {
-            return View();
-        }
-        public IActionResult EditMyAccount()
-        {
-            return View();
-        }
-
-        public IActionResult MyProfile()
-        {
-            return View();
-        }
-        public IActionResult MyAddress()
-        {
-            return View();
-        }
-        public IActionResult MyOrder()
-        {
-            return View();
-        }
-        public IActionResult OrderHistory()
-        {
-            return View();
-        }
         public IActionResult Cart()
         {
             return View();
@@ -50,11 +12,43 @@ namespace Demo_GiaoDien.Controllers
         {
             return View();
         }
-        public IActionResult ShowListProduct()
+        public IActionResult EditMyAccount()
+        {
+            return View();
+        }
+        public IActionResult Home()
+        {
+            return View();
+        }
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult MyAccount()
+        {
+            return View();
+        }
+        public IActionResult MyAddress()
+        {
+            return View();
+        }
+        public IActionResult MyOder()
+        {
+            return View();
+        }
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
+        public IActionResult OrderHistory()
         {
             return View();
         }
         public IActionResult ProductDetail()
+        {
+            return View();
+        }
+        public IActionResult ShowListProduct()
         {
             return View();
         }
@@ -67,10 +61,5 @@ namespace Demo_GiaoDien.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
